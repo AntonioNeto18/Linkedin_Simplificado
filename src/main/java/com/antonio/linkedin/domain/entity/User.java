@@ -68,7 +68,7 @@ public class User {
             throw new DomainException("Post is required");
         }
 
-        if (!post.getAuthor().userId().equals(this.userId) || !this.isAdmin()) {
+        if (!post.getAuthor().userId().equals(this.userId) && !this.isAdmin()) {
             throw new DomainException("Post author is not the same as the user");
         }
 
@@ -80,7 +80,7 @@ public class User {
             throw new DomainException("Experience is required");
         }
 
-        if (!experience.getAuthor().userId().equals(this.userId) || !this.isAdmin()) {
+        if (!experience.getAuthor().userId().equals(this.userId) && !this.isAdmin()) {
             throw new DomainException("Experience author is not the same as the user");
         }
 
